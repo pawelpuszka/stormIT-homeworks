@@ -9,7 +9,7 @@ public class CheckMatrix {
         return true;
     }
 
-    static boolean isSymetric(int dim1, int dim2) {
-        return dim1 == dim2;
+    static boolean isSymetric(double[][] array) {
+        return array.length == array[0].length;
     }
 }
