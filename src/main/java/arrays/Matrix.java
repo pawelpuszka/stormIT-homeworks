@@ -2,29 +2,30 @@ package arrays;
 
 public class Matrix {
 
-    private void fillMatrix(double[][] array) {
-        double num = 1;
-        for (int i = 0, j = 0, k = 0; i < array[i].length;  i++, j++, k++) {
-            array[0][i] = num;
-            array[1][j] = array[0][i] + 0.5;
-            array[2][k] = array[1][j] + 0.5;
-            num += 0.5;
-            if (j == 2 && k == 2) {
-                break;
+    void fillMatrix(double[][] array) {
+        double num = 0.5;
+        for (int j = 0; j < array[0].length; j++) {
+            for (int i = 0; i < array.length; i++) {
+                array[i][j] = num + 0.5;
+                num += 0.5;
+                if (i == array.length - 1) {
+                    num = array[0][j];
+                }
             }
         }
     }
 
-    private void printMatrix(double[][] array) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+    void printMatrix(double[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
                 System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
     }
+
     //suma iloczynów przekątnych tablicy
-    private double diagonalSum(double[][] array) {
+    double diagonalSum(double[][] array) {
         double mult1 = 1;
         double mult2 = 1;
         for (int i = 0, j = 0; i < array.length && j < array[i].length; i++, j++) {
@@ -35,32 +36,36 @@ public class Matrix {
         }
         return mult1 + mult2;
     }
+
     //iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny tablicy
-    private double crossMultiply(double[][] array) {
+    double crossMultiply(double[][] array) {
         double sum1 = 0;
         double sum2 = 0;
         for (int i = 0; i < array.length; i++) {
-            sum1 += array[i][1];
-            sum2 += array[1][i];
+            sum1 += array[i][array.length / 2];
+            sum2 += array[array.length / 2][i];
         }
         return sum1 * sum2;
     }
+
     //suma wszystkich elementów znajdujących się przy krawędzi tablicy
-    private double boundSum(double[][] array) {
+    double boundSum(double[][] array) {
         double sum = 0;
+        double sum2 = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i][0] + array[i][array.length - 1];
-            if (i == 0 || i == array.length - 1) {
-                sum += array[i][array[i].length / 2];
-            }
         }
-        return sum;
+        for (int i = 1; i < array[0].length - 1; i++) {
+            sum2 += array[0][i] + array[array.length - 1][i];
+        }
+        return sum + sum2;
     }
 
     public static void main(String[] args) {
-        double[][] array = new double[3][3];
-        Matrix matrix = new Matrix();
+        UserInput input = new UserInput();
+        double[][] array = input.giveDimension();
 
+        Matrix matrix = new Matrix();
         matrix.fillMatrix(array);
         matrix.printMatrix(array);
 
