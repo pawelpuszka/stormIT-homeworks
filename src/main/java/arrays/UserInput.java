@@ -22,7 +22,6 @@ public class UserInput {
                 }
                 else {
                     System.out.println(GIVE_ME_INTEGER_MSG);
-                    continue;
                 }
             } catch (InputMismatchException ex) {
                 System.out.println(GIVE_ME_INTEGER_MSG);
@@ -37,5 +36,9 @@ public class UserInput {
         int dim1 = readInteger(ROWS_NUMBER_MSG);
         int dim2 = readInteger(COLUMNS_NUMBER_MSG);
         return new double[dim1][dim2];
+    }
+
+    void closeReading() {
+        scan.close();
     }
 }

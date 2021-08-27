@@ -18,5 +18,7 @@ public class Matrix {
         }
         System.out.println("Iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny: " + matrixCalc.crossMultiply(array));
         System.out.println("Suma wszystkich elementów znajdujących się przy krawędzi tablicy: " + matrixCalc.boundSum(array));
+
+        input.closeReading();
     }
 }
