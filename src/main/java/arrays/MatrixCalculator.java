@@ -40,9 +40,11 @@ public class MatrixCalculator {
     double crossMultiply(double[][] array) {
         double sum1 = 0;
         double sum2 = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum1 += array[i][array.length / 2];
-            sum2 += array[array.length / 2][i];
+        for (int i = 0; i < array[0].length; i++) {
+            sum1 += array[array.length / 2][i];
+        }
+        for (int j = 0; j < array.length; j++) {
+            sum2 += array[j][array[0].length / 2];
         }
         return sum1 * sum2;
     }
@@ -52,7 +54,7 @@ public class MatrixCalculator {
         double sum = 0;
         double sum2 = 0;
         for (int i = 0; i < array.length; i++) {
-            sum += array[i][0] + array[i][array.length - 1];
+            sum += array[i][0] + array[i][array[0].length - 1];
         }
         for (int i = 1; i < array[0].length - 1; i++) {
             sum2 += array[0][i] + array[array.length - 1][i];

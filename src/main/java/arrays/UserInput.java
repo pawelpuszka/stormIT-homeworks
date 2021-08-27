@@ -4,16 +4,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
+    private static final String ROWS_NUMBER_MSG = "Podaj liczbę wierszy (3 - 10)";
+    private static final String COLUMNS_NUMBER_MSG = "Podaj liczbę kolumn (3 - 10)";
+    private static final String GIVE_ME_INTEGER_MSG = "Podaj liczbę całkowitą z zakresu 3 -10!";
 
     private Scanner scan = new Scanner(System.in);
-    private static final String ROWS_NUMBER_MSG = "Podaj liczbę wierszy (2 - 10)";
-    private static final String COLUMNS_NUMBER_MSG = "Podaj liczbę kolumn (2 - 10)";
-    private static final String GIVE_ME_INTEGER_MSG = "Podaj liczbę całkowitą z zakresu 2 -10!";
 
     private int readInteger(String msg) {
         int dim = 0;
         boolean correctInput = false;
-        boolean inputInRange = false;
         do {
             try {
                 System.out.print(msg + ": ");
@@ -35,8 +34,8 @@ public class UserInput {
     }
 
     double[][] giveDimension() {
-        int dim1 = readInteger(COLUMNS_NUMBER_MSG);
-        int dim2 = readInteger(ROWS_NUMBER_MSG);
+        int dim1 = readInteger(ROWS_NUMBER_MSG);
+        int dim2 = readInteger(COLUMNS_NUMBER_MSG);
         return new double[dim1][dim2];
     }
 }

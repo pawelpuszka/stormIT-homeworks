@@ -1,20 +1,17 @@
 package arrays;
 
 public class Matrix {
-
-
-
     public static void main(String[] args) {
         UserInput input = new UserInput();
-        double[][] array = input.giveDimension();
-
         MatrixCalculator matrixCalc = new MatrixCalculator();
+
+        double[][] array = input.giveDimension();
         matrixCalc.fillMatrix(array);
         matrixCalc.printMatrix(array);
 
         if (!CheckMatrix.isSymetric(array)) {
             System.out.println("Macież nie jest symetryczna.");
-            System.out.println("Program nie obliczy przekatnych macieży.");
+            System.out.println("Program nie obliczy przekątnych macieży.");
         }
         else {
             System.out.println("Suma iloczynów przekątnych tablicy: " + matrixCalc.diagonalSum(array));
