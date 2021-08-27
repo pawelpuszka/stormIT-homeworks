@@ -1,4 +1,4 @@
-package arrays;
+package arrays.matrix;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
