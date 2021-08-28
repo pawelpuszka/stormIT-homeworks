@@ -17,7 +17,7 @@ public class Matrix {
             System.out.println("Suma iloczynów przekątnych macierzy: " + matrixCalc.diagonalSum(array));
         }
         System.out.println("Iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny: " + matrixCalc.crossMultiply(array));
-        System.out.println("Suma wszystkich elementów znajdujących się przy krawędzi macierzy: " + matrixCalc.boundSum(array));
+        System.out.println("Suma wszystkich elementów znajdujących się przy krawędziach macierzy: " + matrixCalc.boundSum(array));
 
         input.closeReading();
     }
