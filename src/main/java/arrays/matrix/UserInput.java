@@ -1,13 +1,14 @@
 package arrays.matrix;
 
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
     private static final String ROWS_NUMBER_MSG = "Podaj liczbę wierszy (3 - 10)";
     private static final String COLUMNS_NUMBER_MSG = "Podaj liczbę kolumn (3 - 10)";
     private static final String GIVE_ME_INTEGER_MSG = "Podaj liczbę całkowitą z zakresu 3 -10!";
+    static final String UNKNOWN_ERROR_MSG = "Wystąpił nieznany błąd. Aplikacja zakończy działanie.";
+    static final String ARRAY_IS_NULL_MSG = "Macierz jest pusta!";
 
     private final Scanner scan = new Scanner(System.in);
 
@@ -22,7 +23,7 @@ public class UserInput {
                 dim = Integer.parseInt(userInput);
                 correctInput = true;
                 if (!CheckMatrix.isInRange(dim)){
-                    correctInput = true;
+                    correctInput = false;
                     System.out.println(GIVE_ME_INTEGER_MSG);
                 }
             } catch (NumberFormatException | IllegalStateException ex) {
@@ -40,10 +41,9 @@ public class UserInput {
             dim2 = readInteger(COLUMNS_NUMBER_MSG);
         }
         catch (IOException ex) {
-            System.out.println("Wystąpił nieznany błąd. Aplikacja zakończy działanie.");
+            System.out.println(UNKNOWN_ERROR_MSG);
             System.exit(-1);
         }
         return new double[dim1][dim2];
     }
-
 }

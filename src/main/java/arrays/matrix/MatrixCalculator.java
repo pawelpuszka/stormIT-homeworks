@@ -2,6 +2,9 @@ package arrays.matrix;
 
 public class MatrixCalculator {
     void fillMatrix(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(UserInput.ARRAY_IS_NULL_MSG);
+        }
         double num = 0.5;
         for (int j = 0; j < array[0].length; j++) {
             for (int i = 0; i < array.length; i++) {
@@ -15,6 +18,9 @@ public class MatrixCalculator {
     }
 
     void printMatrix(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(UserInput.ARRAY_IS_NULL_MSG);
+        }
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
                 System.out.print(array[i][j] + " ");
