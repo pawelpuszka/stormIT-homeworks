@@ -8,6 +8,7 @@ public class Matrix {
         try {
             double[][] array = input.giveDimension();
             matrixCalc.fillMatrix(array);
+            matrixCalc.printMatrix(array);
             //matrixCalc.printMatrix(null);
 
             if (!CheckMatrix.isSymmetric(array)) {
@@ -22,7 +23,7 @@ public class Matrix {
         }
         catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
-            System.err.println(UserInput.UNKNOWN_ERROR_MSG);
+            System.err.println(Messages.UNKNOWN_ERROR_MSG.getMessage());
             System.exit(-1);
         }
 

@@ -7,7 +7,7 @@ public class CheckMatrix {
 
     static boolean isSymmetric(double[][] array) {
         if (CheckMatrix.isNull(array)) {
-            throw new NullPointerException(UserInput.ARRAY_IS_NULL_MSG);
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
         }
         return array.length == array[0].length;
     }
