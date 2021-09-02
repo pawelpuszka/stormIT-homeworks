@@ -8,7 +8,7 @@ public class Matrix {
         try {
             double[][] array = input.giveDimension();
             matrixCalc.fillMatrix(array);
-            matrixCalc.printMatrix(array);
+            //matrixCalc.printMatrix(null);
 
             if (!CheckMatrix.isSymmetric(array)) {
                 System.out.println("Macierz nie jest symetryczna.");
@@ -21,7 +21,7 @@ public class Matrix {
             System.out.println("Suma wszystkich elementów znajdujących się przy krawędziach macierzy: " + matrixCalc.boundSum(array));
         }
         catch (NullPointerException ex) {
-            ex.getMessage();
+            System.out.println(ex.getMessage());
             System.err.println(UserInput.UNKNOWN_ERROR_MSG);
             System.exit(-1);
         }

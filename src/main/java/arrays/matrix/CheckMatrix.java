@@ -14,11 +14,14 @@ public class CheckMatrix {
 
     static boolean isNull(double [][] array) {
         int nullCounter = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == null) {
-                nullCounter++;
+        if (array != null) {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == null) {
+                    nullCounter++;
+                }
+                return nullCounter > 0;
             }
         }
-        return array == null || nullCounter > 0;
+        return array == null;
     }
 }
