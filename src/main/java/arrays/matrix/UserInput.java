@@ -1,5 +1,6 @@
 package arrays.matrix;
 
+<<<<<<< HEAD
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -27,12 +28,39 @@ public class UserInput {
                 System.out.println(GIVE_ME_INTEGER_MSG);
             } finally {
                 scan.nextLine();
+=======
+import java.io.IOException;
+import java.util.Scanner;
+
+public class UserInput {
+
+
+    private final Scanner scan = new Scanner(System.in);
+
+    private int readInteger(String msg) throws IOException {
+        int dim = 0;
+        boolean correctInput = false;
+        do {
+            String userInput;
+            try {
+                System.out.print(msg + ": ");
+                userInput = scan.nextLine().trim();
+                dim = Integer.parseInt(userInput);
+                correctInput = true;
+                if (!CheckMatrix.isInRange(dim)){
+                    correctInput = false;
+                    System.out.println(Messages.GIVE_ME_INTEGER_MSG.getMessage());
+                }
+            } catch (NumberFormatException | IllegalStateException ex) {
+                System.out.println(Messages.GIVE_ME_INTEGER_MSG.getMessage());
+>>>>>>> 6f7c617d3b40f845d54f95ae98482c9446d319ea
             }
         } while (!correctInput);
         return dim;
     }
 
     double[][] giveDimension() {
+<<<<<<< HEAD
         int dim1 = readInteger(ROWS_NUMBER_MSG);
         int dim2 = readInteger(COLUMNS_NUMBER_MSG);
         return new double[dim1][dim2];
@@ -41,4 +69,18 @@ public class UserInput {
     void closeReading() {
         scan.close();
     }
+=======
+        int dim1 = 0;
+        int dim2 = 0;
+        try (scan) {
+            dim1 = readInteger(Messages.ROWS_NUMBER_MSG.getMessage());
+            dim2 = readInteger(Messages.COLUMNS_NUMBER_MSG.getMessage());
+        }
+        catch (IOException ex) {
+            System.out.println(Messages.UNKNOWN_ERROR_MSG.getMessage());
+            System.exit(-1);
+        }
+        return new double[dim1][dim2];
+    }
+>>>>>>> 6f7c617d3b40f845d54f95ae98482c9446d319ea
 }
