@@ -5,17 +5,6 @@ public class CheckMatrix {
         return dim > 2 && dim <= 10;
     }
 
-<<<<<<< HEAD
-    static boolean isSymetric(double[][] array) {
-        return array.length == array[0].length;
-    }
-
-    /* method not needed in this solution
-     *static boolean isEmpty(double[][] array) {
-     *    return true;
-     *}
-     */
-=======
     static boolean isSymmetric(double[][] array) {
         if (CheckMatrix.isNull(array)) {
             throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
@@ -35,5 +24,4 @@ public class CheckMatrix {
         }
         return array == null;
     }
->>>>>>> 6f7c617d3b40f845d54f95ae98482c9446d319ea
 }
