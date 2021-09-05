@@ -5,20 +5,26 @@ public class Matrix {
         UserInput input = new UserInput();
         MatrixCalculator matrixCalc = new MatrixCalculator();
 
-        double[][] array = input.giveDimension();
-        matrixCalc.fillMatrix(array);
-        matrixCalc.printMatrix(array);
+        try {
+            double[][] array = input.giveDimension();
+            matrixCalc.fillMatrix(array);
+            matrixCalc.printMatrix(array);
+            //matrixCalc.printMatrix(null);
 
-        if (!CheckMatrix.isSymetric(array)) {
-            System.out.println("Macież nie jest symetryczna.");
-            System.out.println("Program nie obliczy przekątnych macieży.");
+            if (!CheckMatrix.isSymmetric(array)) {
+                System.out.println("Macierz nie jest symetryczna.");
+                System.out.println("Program nie obliczy przekątnych macierzy.");
+            }
+            else {
+                System.out.println("Suma iloczynów przekątnych macierzy: " + matrixCalc.diagonalSum(array));
+            }
+            System.out.println("Iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny: " + matrixCalc.crossMultiply(array));
+            System.out.println("Suma wszystkich elementów znajdujących się przy krawędziach macierzy: " + matrixCalc.boundSum(array));
         }
-        else {
-            System.out.println("Suma iloczynów przekątnych tablicy: " + matrixCalc.diagonalSum(array));
+        catch (NullPointerException ex) {
+            System.out.println(ex.getMessage());
+            System.err.println(Messages.UNKNOWN_ERROR_MSG.getMessage());
+            System.exit(-1);
         }
-        System.out.println("Iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny: " + matrixCalc.crossMultiply(array));
-        System.out.println("Suma wszystkich elementów znajdujących się przy krawędzi tablicy: " + matrixCalc.boundSum(array));
-
-        input.closeReading();
     }
 }

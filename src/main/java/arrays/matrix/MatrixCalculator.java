@@ -2,6 +2,10 @@ package arrays.matrix;
 
 public class MatrixCalculator {
     void fillMatrix(double[][] array) {
+
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
+        }
         double num = 0.5;
         for (int j = 0; j < array[0].length; j++) {
             for (int i = 0; i < array.length; i++) {
@@ -15,6 +19,9 @@ public class MatrixCalculator {
     }
 
     void printMatrix(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
+        }
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[0].length; j++) {
                 System.out.print(array[i][j] + " ");
@@ -25,6 +32,9 @@ public class MatrixCalculator {
 
     //suma iloczynów przekątnych tablicy
     double diagonalSum(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
+        }
         double mult1 = 1;
         double mult2 = 1;
         for (int i = 0, j = 0; i < array.length && j < array[i].length; i++, j++) {
@@ -38,6 +48,9 @@ public class MatrixCalculator {
 
     //iloczyn zsumowanych elementów środkowego wiersza i środkowej kolumny tablicy
     double crossMultiply(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
+        }
         double sum1 = 0;
         double sum2 = 0;
         for (int i = 0; i < array[0].length; i++) {
@@ -51,6 +64,9 @@ public class MatrixCalculator {
 
     //suma wszystkich elementów znajdujących się przy krawędzi tablicy
     double boundSum(double[][] array) {
+        if (CheckMatrix.isNull(array)) {
+            throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
+        }
         double sum = 0;
         double sum2 = 0;
         for (int i = 0; i < array.length; i++) {
