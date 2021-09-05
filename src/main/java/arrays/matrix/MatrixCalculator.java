@@ -2,7 +2,6 @@ package arrays.matrix;
 
 public class MatrixCalculator {
     void fillMatrix(double[][] array) {
-
         if (CheckMatrix.isNull(array)) {
             throw new NullPointerException(Messages.ARRAY_IS_NULL_MSG.getMessage());
         }

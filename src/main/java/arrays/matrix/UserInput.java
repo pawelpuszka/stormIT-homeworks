@@ -22,7 +22,6 @@ public class UserInput {
                 }
             } catch (NumberFormatException | IllegalStateException ex) {
                 System.out.println(Messages.GIVE_ME_INTEGER_MSG.getMessage());
-
             }
         } while (!correctInput);
         return dim;
@@ -41,5 +40,4 @@ public class UserInput {
         }
         return new double[dim1][dim2];
     }
-
 }
