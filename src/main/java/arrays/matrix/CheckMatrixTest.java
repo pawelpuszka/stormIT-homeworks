@@ -51,7 +51,7 @@ class CheckMatrixTest {
     }
 
     @Test
-    void isInRange_DimensionIsZero() {
+    void isInRange_DimensionEqualsZero() {
         int input = 0;
 
         boolean result = CheckMatrix.isInRange(input);
@@ -76,6 +76,70 @@ class CheckMatrixTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void isSymmetric_dimensionsHaveTheSameValues() {
+        double[][] array = new double[5][5];
+
+        boolean result = CheckMatrix.isSymmetric(array);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void isSymmetric_firstDimensionIsBigger() {
+        double[][] array = new double[3][6];
+
+        boolean result = CheckMatrix.isSymmetric(array);
+
+        assertFalse(result);
+    }
+
+    @Test
+    void isSymmetric_secondDimensionIsBigger() {
+        double[][] array = new double[6][3];
+
+        boolean result = CheckMatrix.isSymmetric(array);
+
+        assertFalse(result);
+    }
+
+    @Test
+    void isNull_referenceIsPointingAtNull() {
+        double[][] array = null;
+
+        boolean result = CheckMatrix.isNull(array);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void isNull_lastInternalReferenceIsPointingAtNull() {
+        double[][] array = new double[][]{{5, 6, 7}, {8, 9, 10}, null };
+
+        boolean result = CheckMatrix.isNull(array);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void isNull_firstInternalReferenceIsPointingAtNull() {
+        double[][] array = new double[][]{null, {5, 6, 7}, {8, 9, 10}};
+
+        boolean result = CheckMatrix.isNull(array);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void isNull_referenceIsNotPointingAtNull() {
+        double[][] array = new double[][]{{2, 3, 4}, {5, 6, 7}, {8, 9, 10}};
+
+        boolean result = CheckMatrix.isNull(array);
+
+        assertFalse(result);
+    }
+
 }
 
    /* @Test

@@ -19,8 +19,8 @@ public class CheckMatrix {
                 if (array[i] == null) {
                     nullCounter++;
                 }
-                return nullCounter > 0;
             }
+            return nullCounter > 0;
         }
         return array == null;
     }
