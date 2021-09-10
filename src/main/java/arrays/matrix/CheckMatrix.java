@@ -1,5 +1,7 @@
 package arrays.matrix;
 
+import javax.swing.plaf.metal.MetalButtonUI;
+
 public class CheckMatrix {
     static boolean isInRange(int dim) {
         return dim > 2 && dim <= 10;
@@ -13,14 +15,12 @@ public class CheckMatrix {
     }
 
     static boolean isNull(double [][] array) {
-        int nullCounter = 0;
         if (array != null) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] == null) {
-                    nullCounter++;
+                    return true;
                 }
             }
-            return nullCounter > 0;
         }
         return array == null;
     }

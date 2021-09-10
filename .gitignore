@@ -29,5 +29,6 @@ out/
 *.iws 
 
 *.xml.old
+*.txt
 
 
