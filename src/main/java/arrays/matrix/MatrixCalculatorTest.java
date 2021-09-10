@@ -1,7 +1,5 @@
 package arrays.matrix;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,7 +14,7 @@ class MatrixCalculatorTest {
 
         try {
             calc.fillMatrix(array);
-            fail("Exception wasn't thrown!");
+            fail("Nie udało się rzucić wyjątku!");
         }
         catch (NullPointerException ex) {
             assertEquals(Messages.ARRAY_IS_NULL_MSG.getMessage(), ex.getMessage());
