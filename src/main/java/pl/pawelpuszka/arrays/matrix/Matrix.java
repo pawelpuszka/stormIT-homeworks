@@ -1,4 +1,4 @@
-package arrays.matrix;
+package pl.pawelpuszka.arrays.matrix;
 
 public class Matrix {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package arrays.matrix;
-
-import javax.swing.plaf.metal.MetalButtonUI;
+package pl.pawelpuszka.arrays.matrix;
 
 public class CheckMatrix {
     static boolean isInRange(int dim) {

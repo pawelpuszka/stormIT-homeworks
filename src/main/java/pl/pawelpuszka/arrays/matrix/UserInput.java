@@ -1,4 +1,4 @@
-package arrays.matrix;
+package pl.pawelpuszka.arrays.matrix;
 
 import java.io.IOException;
 import java.util.Scanner;

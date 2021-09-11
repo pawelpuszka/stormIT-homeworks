@@ -1,4 +1,4 @@
-package arrays.matrix;
+package pl.pawelpuszka.arrays.matrix;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;

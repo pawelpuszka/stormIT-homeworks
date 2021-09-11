@@ -1,4 +1,4 @@
-package arrays.matrix;
+package pl.pawelpuszka.arrays.matrix;
 
 enum Messages {
     ROWS_NUMBER_MSG("Podaj liczbę wierszy (3 - 10)"),

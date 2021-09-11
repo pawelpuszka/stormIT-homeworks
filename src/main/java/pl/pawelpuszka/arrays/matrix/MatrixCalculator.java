@@ -1,4 +1,4 @@
-package arrays.matrix;
+package pl.pawelpuszka.arrays.matrix;
 
 public class MatrixCalculator {
     void fillMatrix(double[][] array) {
