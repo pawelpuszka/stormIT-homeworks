@@ -28,4 +28,7 @@ out/
 *.ipr 
 *.iws 
 
+*.xml.old
+*.txt
+
 
